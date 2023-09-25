@@ -191,7 +191,9 @@ fun profilesetup(
                                             horizontalAlignment = Alignment.CenterHorizontally
                                         ) {
                                             Text(
-                                                text = value, fontSize = 18.35.sp, color = Color.Black
+                                                text = value,
+                                                fontSize = 18.35.sp,
+                                                color = Color.Black
                                             )
                                         }
 
