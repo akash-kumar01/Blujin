@@ -1,9 +1,11 @@
 package com.example.blujin
 
+import android.os.Build
 import android.os.Bundle
 import android.view.animation.OvershootInterpolator
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -24,8 +26,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.blujin.Screens.Onboarding
-import com.example.blujin.Screens.Profilesetup
 import com.example.blujin.Screens.signin
+import com.example.blujin.screens.profilesetup
 
 import com.example.blujin.ui.theme.BlujinTheme
 import com.example.blujin.ui.theme.bg
@@ -33,6 +35,7 @@ import com.example.blujin.ui.theme.bg
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -44,6 +47,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @Composable
     fun navigation() {
         val navController = rememberNavController()
@@ -58,7 +62,7 @@ class MainActivity : ComponentActivity() {
                 signin(navController=navController)
             }
             composable("setuppage1") {
-                Profilesetup(navController=navController)
+                profilesetup(navController=navController)
             }
 
         }
